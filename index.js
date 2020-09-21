@@ -13,28 +13,6 @@ module.exports = class MyPlugin extends Plugin {
         );
 
         inject(shorthand, MessageContent, 'type', this.transformSpotifyLink);
-        /* inject(
-            `${shorthand}-messages`,
-            MessageContent,
-            'type',
-            ([event], res) => {
-                const children = res.props.children.find(c => Array.isArray(c));
-                const spotifyLinks = children.filter(
-                    c =>
-                        c.props &&
-                        c.props.href &&
-                        c.props.href.toLowerCase().includes('open.spotify.com')
-                );
-
-                for (var i = 0; i < spotifyLinks.length; i++) {
-                    const url = spotifyLinks[i].props.href.split('/');
-                    spotifyLinks[i].props.href = `spotify:${url[3]}:${url[4]}`;
-                    console.log(spotifyLinks[i]);
-                }
-
-                return res;
-            }
-        );*/
     }
 
     transformSpotifyLink(e, res) {
