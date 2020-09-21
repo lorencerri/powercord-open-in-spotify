@@ -3,7 +3,7 @@ const { inject, uninject } = require('powercord/injector');
 const { getModule } = require('powercord/webpack');
 const { shorthand } = require('./manifest.json');
 
-module.exports = class MyPlugin extends Plugin {
+module.exports = class OpenInSpotify extends Plugin {
     async startPlugin() {
         const MessageContent = await getModule(
             m => m.type && m.type.displayName == 'MessageContent'
