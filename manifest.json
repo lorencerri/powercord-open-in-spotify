@@ -1,8 +1,8 @@
 {
-    "name": "Example Plugin",
-    "shorthand": "ePlugin",
+    "name": "Open in Spotify",
+    "shorthand": "open-in-spotify",
     "version": "1.0.0",
-    "description": "A simple plugin template.",
+    "description": "Open spotify links in the spotify application instead of the web browser.",
     "author": "TrueXPixels",
     "license": "MIT"
 }

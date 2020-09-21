@@ -1,10 +1,10 @@
-# powercord-plugin-template
+# powercord-open-in-spotify
 
-Personal powercord plugin template, feel free to use this, although keep in mind I have no idea what I'm doing.
+Open spotify links in the spotify application instead of the web browser.
 
-| Preview                                 | Settings                            |
-| --------------------------------------- | ----------------------------------- |
-| ![](https://i.plexidev.org/RmG67u3.gif) | ![](https://i.plexidev.org/FmULjPO) |
+| Preview                                 | Settings           |
+| --------------------------------------- | ------------------ |
+| ![](https://i.plexidev.org/vCyqZjs.gif) | None to configure. |
 
 ---
 
