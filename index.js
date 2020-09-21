@@ -20,10 +20,8 @@ module.exports = class MyPlugin extends Plugin {
 
         for (var i = 0; i < children.length; i++) {
             if (
-                !children[i].props ||
-                !children[i].props.href ||
-                !children[i].props.href
-                    .toLowerCase()
+                !children[i].props?.href
+                    ?.toLowerCase()
                     .includes('open.spotify.com')
             )
                 continue;
