@@ -19,12 +19,8 @@ module.exports = class MyPlugin extends Plugin {
         const children = res.props.children.find(c => Array.isArray(c));
 
         for (var i = 0; i < children.length; i++) {
-            if (
-                !children[i].props?.href
-                    ?.toLowerCase()
-                    .includes('open.spotify.com')
-            )
-                continue;
+            // prettier-ignore
+            if (!children[i].props?.href?.toLowerCase().includes('open.spotify.com')) continue;
 
             const url = children[i].props.href.split('/');
             children[i].props.href = `spotify:${url[3]}:${url[4]}`;
