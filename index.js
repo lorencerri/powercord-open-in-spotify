@@ -1,10 +1,7 @@
 const { Plugin } = require('powercord/entities');
 const { inject, uninject } = require('powercord/injector');
 const { getModule } = require('powercord/webpack');
-
-const { ContextMenu } = require('powercord/components');
-const { getOwnerInstance } = require('powercord/util');
-const { name, shorthand } = require('./manifest.json');
+const { shorthand } = require('./manifest.json');
 
 module.exports = class MyPlugin extends Plugin {
     async startPlugin() {
