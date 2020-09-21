@@ -21,6 +21,11 @@ module.exports = class OpenInSpotify extends Plugin {
                 if (!children[i].props?.href?.toLowerCase().includes('open.spotify.com')) continue;
 
                 const url = children[i].props.href.split('/');
+
+                if (!url[3] || !url[4]) continue;
+                // prettier-ignore
+                if (!['embed', 'search', 'local', 'playlist', 'user', 'starred', 'artist', 'album', 'track', 'episode'].includes(url[3].toLowerCase())) continue;
+
                 children[i].props.href = `spotify:${url[3]}:${url[4]}`;
             }
         }
