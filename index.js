@@ -36,6 +36,6 @@ module.exports = class MyPlugin extends Plugin {
     }
 
     pluginWillUnload() {
-        uninject(`${shorthand}-messages`);
+        uninject(shorthand);
     }
 };
