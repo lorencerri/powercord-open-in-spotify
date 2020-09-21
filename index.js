@@ -15,12 +15,14 @@ module.exports = class OpenInSpotify extends Plugin {
     transformSpotifyLink(e, res) {
         const children = res.props.children.find(c => Array.isArray(c));
 
-        for (var i = 0; i < children.length; i++) {
-            // prettier-ignore
-            if (!children[i].props?.href?.toLowerCase().includes('open.spotify.com')) continue;
+        if (children) {
+            for (var i = 0; i < children.length; i++) {
+                // prettier-ignore
+                if (!children[i].props?.href?.toLowerCase().includes('open.spotify.com')) continue;
 
-            const url = children[i].props.href.split('/');
-            children[i].props.href = `spotify:${url[3]}:${url[4]}`;
+                const url = children[i].props.href.split('/');
+                children[i].props.href = `spotify:${url[3]}:${url[4]}`;
+            }
         }
 
         return res;
