@@ -1,7 +1,6 @@
 const { Plugin } = require('powercord/entities');
 const { inject, uninject } = require('powercord/injector');
 const { getModule } = require('powercord/webpack');
-const { shorthand } = require('./manifest.json');
 
 const MessageContent = getModule(
     m => m.type && m.type.displayName == 'MessageContent',
@@ -10,7 +9,8 @@ const MessageContent = getModule(
 
 module.exports = class OpenInSpotify extends Plugin {
     async startPlugin() {
-        inject(shorthand, MessageContent, 'type', this.transformSpotifyLink);
+        // prettier-ignore
+        inject('open-in-spotify', MessageContent, 'type', this.transformSpotifyLink);
     }
 
     transformSpotifyLink(e, res) {
@@ -35,6 +35,6 @@ module.exports = class OpenInSpotify extends Plugin {
     }
 
     pluginWillUnload() {
-        uninject(shorthand);
+        uninject('open-in-spotify');
     }
 };
