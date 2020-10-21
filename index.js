@@ -11,6 +11,7 @@ module.exports = class OpenInSpotify extends Plugin {
     async startPlugin() {
         // prettier-ignore
         inject('open-in-spotify', MessageContent, 'type', this.transformSpotifyLink);
+        MessageContent.type.displayName = 'MessageContent';
     }
 
     transformSpotifyLink(e, res) {
